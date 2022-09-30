@@ -1,6 +1,10 @@
 " Better nav for omnicomplete
 inoremap <expr> <c-j> ("\<C-n>")
 inoremap <expr> <c-k> ("\<C-p>")
+" Restart Onisharpl
+nnoremap <Leader>R :!dotnet clean<CR>:CocRestart<CR>
+" format json file
+nnoremap <Leader>J :%!jq .<CR>
 
 " Use alt + hjkl to resize windows
 nnoremap <M-j>    :resize -2<CR>
@@ -13,16 +17,17 @@ inoremap jk <Esc>
 inoremap kj <Esc>
 
 " Easy CAPS
-inoremap <c-u> <ESC>viwUi
-nnoremap <c-u> viwU<Esc>
-
+" inoremap <c-u> <ESC>viwUi
+" nnoremap <c-u> viwU<Esc>
+" Pesquisar Aquivos
+nnoremap <Leader>P :Files<CR>
 " TAB in general mode will move to text buffer
 nnoremap <TAB> :bnext<CR>
 " SHIFT-TAB will go back
 nnoremap <S-TAB> :bprevious<CR>
 
 " Alternate way to save
-nnoremap <C-s> :w<CR>
+nnoremap <Leader>w :w<CR>
 " Alternate way to quit
 nnoremap <C-Q> :wq!<CR>
 " Use control-c instead of escape
@@ -35,10 +40,10 @@ vnoremap < <gv
 vnoremap > >gv
 
 " Better window navigation
-nnoremap <C-h> <C-w>h
-nnoremap <C-j> <C-w>j
-nnoremap <C-k> <C-w>k
-nnoremap <C-l> <C-w>l
+nnoremap <S-h> <C-w>h
+nnoremap <S-j> <C-w>j
+nnoremap <S-k> <C-w>k
+nnoremap <S-l> <C-w>l
 
 nnoremap <Leader>o o<Esc>^Da
 nnoremap <Leader>O O<Esc>^Da"
@@ -62,4 +67,4 @@ nnoremap <silent> <space>s :<C-u>CocList -I symbols<cr>
 
 nmap <leader>. <Plug>(coc-codeaction)
 nmap <leader>rn <Plug>(coc-rename)
-
+let g:vimspector_enable_mappings = 'HUMAN'
